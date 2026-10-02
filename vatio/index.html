@@ -1,55 +1,286 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vatio · Velocidad de carga</title>
-<meta name="description" content="Vatio mide en directo los vatios que entran en tu batería, te dice si el cable o el cargador frenan la carga y te ayuda a cuidar la batería. Gratis, sin anuncios, para Android.">
+<title>Vatio · Mira a qué velocidad carga tu móvil</title>
+<meta name="description" content="Vatio mide en directo los vatios que entran en tu batería, te dice si el cable o el cargador frenan la carga y qué cargador necesita tu móvil. Gratis, sin anuncios, para Android.">
+<meta property="og:title" content="Vatio · Mira a qué velocidad carga tu móvil">
+<meta property="og:description" content="Vatios reales en directo, ¿cable o cargador?, y el cargador ideal para tu móvil. Gratis y sin anuncios.">
+<meta property="og:image" content="https://drubtech.github.io/vatio/img/og.jpg">
+<meta property="og:url" content="https://drubtech.github.io/vatio/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#104e5c">
 <link rel="icon" href="icono.png">
-<style>
-  :root { --bg: #eef0f2; --card: #ffffff; --text: #23272c; --muted: #5b626b; --accent: #3f7389; --line: #d3d7dc; }
-  @media (prefers-color-scheme: dark) { :root { --bg: #0b1418; --card: #142227; --text: #f1f3f4; --muted: #9da3aa; --accent: #5ee2cd; --line: #243840; } }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  main { max-width: 760px; margin: 0 auto; padding: 40px 16px 64px; }
-  header { display: flex; gap: 18px; align-items: center; }
-  header img { width: 84px; height: 84px; border-radius: 20px; flex: none; }
-  h1 { font-size: 34px; margin: 0; letter-spacing: -0.5px; }
-  .muted { color: var(--muted); }
-  a { color: var(--accent); }
-  .card { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 22px; margin-top: 24px; }
-  ul { padding-left: 20px; margin: 8px 0 0; }
-  li { margin: 6px 0; }
-  .badge { display: inline-block; margin-top: 20px; padding: 12px 20px; border-radius: 999px; background: var(--accent); color: var(--bg); font-weight: 700; text-decoration: none; }
-  footer { margin-top: 40px; font-size: 14px; }
-</style>
+<link rel="apple-touch-icon" href="icono.png">
+<link rel="preload" href="img/ahora.webp" as="image">
+<link rel="stylesheet" href="../assets/estilo.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Vatio","operatingSystem":"Android","applicationCategory":"UtilitiesApplication","description":"Mide en directo los vatios que entran en la batería, detecta si el cable o el cargador frenan la carga y recomienda el cargador ideal para cada móvil.","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Organization","name":"Drub Tech","url":"https://drubtech.github.io/"},"image":"https://drubtech.github.io/vatio/img/og.jpg"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"¿Vatio es gratis?","acceptedAnswer":{"@type":"Answer","text":"Sí. Vatio es gratis, sin anuncios y sin suscripciones."}},
+{"@type":"Question","name":"¿Hay versión para iPhone?","acceptedAnswer":{"@type":"Answer","text":"De momento solo Android: iOS no deja a las apps leer la corriente de carga."}},
+{"@type":"Question","name":"¿Por qué no veo los vatios que pone mi cargador?","acceptedAnswer":{"@type":"Answer","text":"El móvil solo carga al máximo hasta más o menos el 50–80 % y luego baja a propósito para cuidar la batería. Además, Vatio mide lo que entra en la batería, que siempre es algo menos de lo que anuncia el cargador."}},
+{"@type":"Question","name":"¿Un cargador de más vatios estropea la batería?","acceptedAnswer":{"@type":"Answer","text":"No. El móvil solo toma los vatios que admite. Lo importante es que el cargador sea de marca y tenga marcado CE."}}
+]}
+</script>
 </head>
-<body>
-<main>
-  <header>
-    <img src="icono.png" alt="Icono de Vatio">
-    <div>
-      <h1>Vatio</h1>
-      <p class="muted" style="margin:0">Mira a qué velocidad carga tu móvil</p>
-    </div>
-  </header>
+<body class="vatio">
 
-  <section class="card">
-    <ul>
-      <li><strong>Vatios reales en directo</strong>, verificados con tu batería.</li>
-      <li><strong>¿Cable o cargador?</strong> Una prueba de 3 minutos te dice cuál frena la carga.</li>
-      <li><strong>¿Qué cargador necesito?</strong> Los vatios y el tipo de carga que admite tu móvil.</li>
-      <li><strong>Historial e informe mensual</strong> de tus cargas y consejos para que la batería dure.</li>
-    </ul>
-    <p class="muted">Gratis, sin anuncios y sin vender tus datos: todo se queda en tu móvil. Para Android.</p>
-    <span class="badge">Próximamente en Google Play</span>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="icono.png" alt="">VATIO</a>
+    <nav>
+      <a href="#vatios">¿Cuántos vatios?</a>
+      <a href="#funciones">Funciones</a>
+      <a href="#mitos">Mitos</a>
+      <a href="#preguntas">Preguntas</a>
+      <a class="btn small" href="#beta">Únete a la beta</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- Portada -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="pill"><span class="dot"></span>Beta abierta · Android</span>
+        <h1>Mira a qué velocidad <span class="grad">carga tu móvil.</span></h1>
+        <p class="lead">Vatios reales en directo, verificados con tu batería. Vatio te dice si el cable o el cargador frenan la carga y qué cargador necesita de verdad tu móvil.</p>
+        <div class="cta">
+          <a class="btn" href="#beta">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 L4.5 13.5 H11 L10 22 L19.5 10 H13 Z"/></svg>
+            Pruébala gratis
+          </a>
+          <a class="btn ghost" href="#vatios">¿Cuántos vatios admite mi móvil?</a>
+        </div>
+        <div class="facts">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 L10 17 L19 7"/></svg>Gratis</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 L10 17 L19 7"/></svg>Sin anuncios</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 L10 17 L19 7"/></svg>Tus datos no salen del móvil</span>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="halo" aria-hidden="true">
+          <svg viewBox="0 0 240 240">
+            <defs>
+              <linearGradient id="halo" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#b2a0ff"/><stop offset=".35" stop-color="#ffa0c8"/>
+                <stop offset=".65" stop-color="#ffbe8c"/><stop offset="1" stop-color="#78f0c8"/>
+              </linearGradient>
+            </defs>
+            <path d="M52.1 187.9 A96 96 0 1 1 187.9 187.9" fill="none" stroke="url(#halo)" stroke-width="7" stroke-linecap="round" opacity=".9"/>
+          </svg>
+        </div>
+        <div class="phone"><img src="img/ahora.webp" alt="Pantalla principal de Vatio: 18,4 vatios, carga rápida, al 80 % en 14 minutos" width="540" height="1200"></div>
+        <div class="watt-chip" aria-hidden="true"><b>18,4</b><small>W</small></div>
+        <div class="verdict-chip" aria-hidden="true">Carga rápida<span>Buen cargador y buen cable</span></div>
+      </div>
+    </div>
   </section>
 
-  <footer class="muted">
-    <a href="privacidad">Política de privacidad</a> ·
-    <a href="https://www.instagram.com/vatio_app">Instagram</a> ·
-    <a href="../">Drub Tech</a>
-  </footer>
+  <!-- El problema -->
+  <section class="center">
+    <div class="wrap reveal">
+      <p class="kicker">El problema</p>
+      <h2>Tu móvil nuevo ya no trae cargador.<br>Y nadie te explica cuál comprar.</h2>
+      <div class="terms" aria-hidden="true">
+        <span>¿15 W?</span><span>¿PD?</span><span>¿PPS?</span><span>¿45 W?</span><span>¿3 A o 5 A?</span><span>¿USB-A?</span>
+      </div>
+      <p class="lead" style="margin-top:34px">Con un cargador o un cable que no encaja, tu móvil puede cargar a la mitad de velocidad sin que te des cuenta. Vatio te lo enseña en segundos.</p>
+    </div>
+  </section>
+
+  <!-- Herramienta -->
+  <section id="vatios">
+    <div class="wrap">
+      <div class="tool reveal" id="watts-tool">
+        <p class="kicker">Herramienta gratuita</p>
+        <h2>¿Cuántos vatios admite tu móvil?</h2>
+        <p class="lead" style="margin-top:12px">Escribe tu modelo y te decimos su carga máxima y qué cargador y cable necesitas.</p>
+        <div class="search">
+          <input list="phones" placeholder="Ej.: Galaxy A54, Redmi Note 13, Pixel 8…" aria-label="Modelo de móvil" autocomplete="off">
+          <datalist id="phones"></datalist>
+        </div>
+        <div class="suggest"></div>
+        <div class="result" aria-live="polite">
+          <div class="gauge">
+            <svg viewBox="0 0 240 240" aria-hidden="true">
+              <defs>
+                <linearGradient id="gfill" x1="0" y1="1" x2="1" y2="0">
+                  <stop offset="0" stop-color="#b2a0ff"/><stop offset=".4" stop-color="#ffa0c8"/>
+                  <stop offset=".7" stop-color="#ffbe8c"/><stop offset="1" stop-color="#78f0c8"/>
+                </linearGradient>
+              </defs>
+              <path d="M52.1 187.9 A96 96 0 1 1 187.9 187.9" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="16" stroke-linecap="round"/>
+              <path class="fill" d="M52.1 187.9 A96 96 0 1 1 187.9 187.9" fill="none" stroke="url(#gfill)" stroke-width="16" stroke-linecap="round"/>
+            </svg>
+            <div class="num"><b data-watts>0</b><small>VATIOS MÁX.</small></div>
+          </div>
+          <div>
+            <h3 data-name></h3>
+            <p class="muted" style="margin:4px 0 0" data-speed></p>
+            <div class="specs">
+              <div><small>Carga máxima</small><b data-max></b></div>
+              <div><small>Batería</small><b data-battery></b></div>
+              <div><small>Puerto</small><b data-port></b></div>
+              <div><small>Protocolo</small><b data-protocol></b></div>
+            </div>
+            <p class="advice" data-advice></p>
+          </div>
+        </div>
+        <p class="note">Cargando el catálogo…</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Funciones -->
+  <section id="funciones">
+    <div class="wrap">
+      <div class="center reveal">
+        <p class="kicker">Qué hace Vatio</p>
+        <h2>Todo lo que tu móvil no te cuenta.</h2>
+        <span class="rainbow"></span>
+      </div>
+      <div class="grid three">
+        <div class="card reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 L4.5 13.5 H11 L10 22 L19.5 10 H13 Z"/></svg></div>
+          <h3>Vatios en directo</h3>
+          <p>La potencia real que entra en la batería, el tiempo hasta el 80 % y si estás aprovechando tu cargador.</p>
+        </div>
+        <div class="card reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 2.5 V6 M11 2.5 V6 M5 6 H13 V9.5 A4 4 0 0 1 5 9.5 Z M9 13.5 V16 C9 19 11 21 14 21 H20.5"/></svg></div>
+          <h3>¿Cable o cargador?</h3>
+          <p>Un asistente con 2 o 3 pruebas cortas te dice cuál de los dos está frenando la carga.</p>
+        </div>
+        <div class="card reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2.5 V7 M15 2.5 V7 M6.5 7 H17.5 V10.5 A5.5 5.5 0 0 1 6.5 10.5 Z M12 16 V21.5"/></svg></div>
+          <h3>Tu cargador ideal</h3>
+          <p>Los vatios y el tipo de carga que admite tu modelo, y qué evitar. Antes de comprar, prueba el que ya tienes.</p>
+        </div>
+        <div class="card reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20 V13 M12 20 V5 M19 20 V9 M3 21.5 H21"/></svg></div>
+          <h3>Comparativa</h3>
+          <p>Prueba tus cargadores y cables y míralos en un ranking. Sabrás cuál usar en casa, en el trabajo o en el coche.</p>
+        </div>
+        <div class="card reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 A9 9 0 1 0 12 21 A9 9 0 1 0 12 3 Z M12 7 V12 L15.5 14"/></svg></div>
+          <h3>Historial e informe</h3>
+          <p>Cada carga registrada y puntuada, y un informe mensual claro, listo para compartir.</p>
+        </div>
+        <div class="card reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13.5 V5 A2 2 0 0 1 14 5 V13.5 A4 4 0 1 1 10 13.5 Z M12 9 V16"/></svg></div>
+          <h3>Cuida tu batería</h3>
+          <p>Avisos de calor y al 80 %, nota de tus hábitos y consejos hechos a tu medida.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Capturas -->
+  <section style="padding-top:24px">
+    <div class="wrap center reveal">
+      <p class="kicker">Así es por dentro</p>
+      <h2>Clara de un vistazo.</h2>
+    </div>
+    <div class="gallery" tabindex="0" aria-label="Capturas de Vatio">
+      <figure><div class="phone"><img src="img/ahora-mark.webp" alt="Pantalla Ahora con el tema Mark" loading="lazy" width="540" height="1200"></div><figcaption>En directo<span>Vatios, % y temperatura</span></figcaption></figure>
+      <figure><div class="phone"><img src="img/comparativa.webp" alt="Comparativa de cargadores y cables" loading="lazy" width="540" height="1200"></div><figcaption>Comparativa<span>Tu mejor combinación</span></figcaption></figure>
+      <figure><div class="phone"><img src="img/historial.webp" alt="Historial de cargas" loading="lazy" width="540" height="1200"></div><figcaption>Historial<span>Cada carga, puntuada</span></figcaption></figure>
+      <figure><div class="phone"><img src="img/informe.webp" alt="Informe mensual" loading="lazy" width="540" height="1200"></div><figcaption>Informe mensual<span>Tu mes en números</span></figcaption></figure>
+      <figure><div class="phone"><img src="img/habitos.webp" alt="Nota de hábitos de carga" loading="lazy" width="540" height="1200"></div><figcaption>Hábitos<span>Tu nota de carga</span></figcaption></figure>
+      <figure><div class="phone"><img src="img/consejos.webp" alt="Consejos para la batería" loading="lazy" width="540" height="1200"></div><figcaption>Consejos<span>Hechos a tu medida</span></figcaption></figure>
+      <figure><div class="phone"><img src="img/ahora-claro.webp" alt="Pantalla Ahora con un tema claro" loading="lazy" width="540" height="1200"></div><figcaption>7 temas<span>Claros u oscuros</span></figcaption></figure>
+    </div>
+  </section>
+
+  <!-- Mitos -->
+  <section id="mitos">
+    <div class="wrap">
+      <div class="center reveal">
+        <p class="kicker">Mito o verdad</p>
+        <h2>Lo que todo el mundo dice sobre cargar el móvil.</h2>
+        <span class="rainbow"></span>
+      </div>
+      <div class="grid three">
+        <div class="card myth reveal"><span class="tag no">FALSO</span><q>Cargar el móvil por la noche lo estropea</q><p>Al llegar al 100 % deja de cargar. Lo que desgasta es pasar muchas horas al 100 % y con calor: activa la carga optimizada.</p></div>
+        <div class="card myth reveal"><span class="tag no">FALSO</span><q>Un cargador de más vatios quema la batería</q><p>El móvil solo toma lo que admite. Un cargador de 65 W en un móvil de 25 W carga a 25 W.</p></div>
+        <div class="card myth reveal"><span class="tag no">FALSO</span><q>Hay que dejar que llegue al 0 %</q><p>Eso era con las baterías antiguas. A las de litio les sienta mejor moverse entre el 20 y el 80 %.</p></div>
+        <div class="card myth reveal"><span class="tag yes">VERDAD</span><q>El calor es el peor enemigo de la batería</q><p>Cargar a más de 40 °C es lo que más la desgasta: bajo la almohada, al sol o jugando mientras carga.</p></div>
+        <div class="card myth reveal"><span class="tag maybe">DEPENDE</span><q>La carga rápida estropea la batería</q><p>Muy poco. El móvil solo carga rápido al principio y frena cerca del 80 %. El problema es el calor, no los vatios.</p></div>
+        <div class="card myth reveal"><span class="tag yes">VERDAD</span><q>No todos los cables USB-C son iguales</q><p>Uno de 3 A se queda en unos 33 W. Si tu móvil admite más, necesitas uno de 5 A.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Valores -->
+  <section style="padding-top:24px">
+    <div class="wrap">
+      <div class="values">
+        <div class="card value reveal"><span class="big grad">0</span><b>anuncios</b><p class="muted" style="margin:6px 0 0">Ni banners, ni vídeos, ni avisos falsos de virus.</p></div>
+        <div class="card value reveal"><span class="big grad">100 %</span><b>en tu móvil</b><p class="muted" style="margin:6px 0 0">Tu historial no sale de tu teléfono. Sin cuentas.</p></div>
+        <div class="card value reveal"><span class="big grad">3 min</span><b>para saberlo</b><p class="muted" style="margin:6px 0 0">Lo que tarda una prueba en decirte si falla el cable o el cargador.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beta -->
+  <section id="beta">
+    <div class="wrap">
+      <div class="beta reveal">
+        <span class="pill"><span class="dot"></span>Buscamos testers</span>
+        <h2 style="margin-top:20px">Prueba Vatio antes que nadie.</h2>
+        <p class="lead" style="margin:14px auto 0">Solo necesitas un móvil Android. Tu opinión decide cómo será la versión final.</p>
+        <div class="steps">
+          <div class="step"><b>01</b>Escríbenos «TESTER» por Instagram o por correo.</div>
+          <div class="step"><b>02</b>Te añadimos a la beta con tu correo de Google Play.</div>
+          <div class="step"><b>03</b>La instalas desde Google Play y nos cuentas qué te parece.</div>
+        </div>
+        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+          <a class="btn" href="https://ig.me/m/vatio_app">Escríbenos por Instagram</a>
+          <a class="btn ghost" href="mailto:{{EMAIL}}?subject=Quiero%20ser%20tester%20de%20Vatio">Por correo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preguntas -->
+  <section id="preguntas" style="padding-top:24px">
+    <div class="wrap">
+      <div class="center reveal">
+        <p class="kicker">Preguntas frecuentes</p>
+        <h2>Lo que nos preguntáis.</h2>
+      </div>
+      <div class="faq">
+        <details><summary>¿Vatio es gratis?</summary><p>Sí. Vatio es gratis, sin anuncios y sin suscripciones.</p></details>
+        <details><summary>¿Hay versión para iPhone?</summary><p>De momento solo Android: iOS no deja a las apps leer la corriente de carga.</p></details>
+        <details><summary>¿Es fiable la medida?</summary><p>Vatio lee la corriente y el voltaje que da tu propio móvil y los contrasta con cuánto sube la batería. Por eso decimos que son vatios «verificados».</p></details>
+        <details><summary>¿Por qué no veo los vatios que pone mi cargador?</summary><p>El móvil solo carga al máximo hasta más o menos el 50–80 % y luego baja a propósito para cuidar la batería. Además, medimos lo que entra en la batería, que siempre es algo menos de lo que anuncia el cargador.</p></details>
+        <details><summary>¿Qué datos recoge?</summary><p>Ninguno sale de tu móvil. El historial y las pruebas se guardan en tu teléfono y puedes borrarlos cuando quieras. <a href="privacidad">Política de privacidad</a>.</p></details>
+        <details><summary>¿Gasta batería?</summary><p>Muy poca: usa los datos que Android ya tiene y solo mide de forma continua mientras el móvil está enchufado.</p></details>
+        <details><summary>En mi Xiaomi o Samsung deja de funcionar en segundo plano</summary><p>El sistema la cierra para ahorrar. En Xiaomi activa el inicio automático y pon el ahorro de batería en «Sin restricciones». En Samsung, sácala de «Apps en suspensión». Vatio te guía paso a paso.</p></details>
+        <details><summary>¿Recomendáis cargadores concretos?</summary><p>Sí, por compatibilidad con tu móvil, nunca por quién paga. Siempre te decimos primero qué características buscar para que lo compres donde quieras. Algunos enlaces son de afiliado y están señalados.</p></details>
+      </div>
+    </div>
+  </section>
 </main>
+
+<footer>
+  <div class="wrap">
+    <span>Vatio es una app de <a href="../">Drub Tech</a> · © <span data-year>2026</span></span>
+    <nav>
+      <a href="privacidad">Privacidad</a>
+      <a href="https://www.instagram.com/vatio_app">Instagram</a>
+      <a href="mailto:{{EMAIL}}">Contacto</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../assets/web.js"></script>
 </body>
 </html>

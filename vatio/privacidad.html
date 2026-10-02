@@ -5,29 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vatio · Política de privacidad</title>
 <link rel="icon" href="icono.png">
-<style>
-  :root { --bg: #eef0f2; --card: #ffffff; --text: #23272c; --muted: #5b626b; --accent: #3f7389; --line: #d3d7dc; }
-  @media (prefers-color-scheme: dark) { :root { --bg: #16181b; --card: #212428; --text: #f1f3f4; --muted: #9da3aa; --accent: #7fb3c8; --line: #30353b; } }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
-  .card { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 24px; margin-bottom: 20px; }
-  h1 { font-size: 28px; margin: 0 0 4px; }
-  h2 { font-size: 19px; margin: 24px 0 6px; color: var(--accent); }
-  p, li { color: var(--text); }
-  .muted { color: var(--muted); font-size: 14px; }
-  nav a { color: var(--accent); margin-right: 16px; }
-  table { width: 100%; border-collapse: collapse; font-size: 15px; }
-  td { border-top: 1px solid var(--line); padding: 8px 6px; vertical-align: top; }
-</style>
+<meta name="theme-color" content="#104e5c">
+<link rel="stylesheet" href="../assets/estilo.css">
 </head>
-<body>
-<main>
-  <nav><a href="./">← Vatio</a><a href="#es">Español</a><a href="#en">English</a></nav>
+<body class="vatio">
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="icono.png" alt="">VATIO</a>
+    <nav>
+      <a href="#es">Español</a>
+      <a href="#en">English</a>
+      <a class="btn small" href="./">Volver a Vatio</a>
+    </nav>
+  </div>
+</header>
+
+<main class="doc">
 
   <section class="card" id="es">
     <h1>Política de privacidad de Vatio</h1>
-    <p class="muted">Última actualización: 29 de septiembre de 2026 · Responsable: Drub Tech · Contacto: [CORREO DE CONTACTO]</p>
+    <p class="muted">Última actualización: 2 de octubre de 2026 · Responsable: Drub Tech · Contacto: <a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
 
     <h2>Resumen</h2>
     <p>Vatio mide cómo carga tu móvil. <strong>No recopila datos personales, no usa analíticas ni publicidad personalizada y no envía tus datos a ningún servidor.</strong> Todo lo que la app registra se guarda solo en tu dispositivo.</p>
@@ -57,7 +55,7 @@
     </ul>
 
     <h2>Tus derechos y cómo borrar tus datos</h2>
-    <p>Como los datos solo están en tu móvil, tú tienes el control: puedes borrar el historial desde Ajustes → «Borrar mi historial», y al desinstalar la app se elimina todo. Para cualquier duda, escríbenos a [CORREO DE CONTACTO].</p>
+    <p>Como los datos solo están en tu móvil, tú tienes el control: puedes borrar el historial desde Ajustes → «Borrar mi historial», y al desinstalar la app se elimina todo. Para cualquier duda, escríbenos a <a href="mailto:{{EMAIL}}">{{EMAIL}}</a>.</p>
 
     <h2>Menores</h2>
     <p>Vatio no está dirigida a menores de 13 años y no recopila datos de nadie.</p>
@@ -68,7 +66,7 @@
 
   <section class="card" id="en">
     <h1>Vatio privacy policy</h1>
-    <p class="muted">Last updated: 29 September 2026 · Controller: Drub Tech · Contact: [CONTACT EMAIL]</p>
+    <p class="muted">Last updated: 2 October 2026 · Controller: Drub Tech · Contact: <a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
 
     <h2>Summary</h2>
     <p>Vatio measures how your phone charges. <strong>It doesn't collect personal data, doesn't use analytics or personalised ads, and doesn't send your data to any server.</strong> Everything the app records is stored only on your device.</p>
@@ -98,7 +96,7 @@
     </ul>
 
     <h2>Your rights and deleting your data</h2>
-    <p>Because the data lives only on your phone, you're in control: you can delete the history from Settings → “Delete my history”, and uninstalling the app removes everything. For any questions, write to [CONTACT EMAIL].</p>
+    <p>Because the data lives only on your phone, you're in control: you can delete the history from Settings → “Delete my history”, and uninstalling the app removes everything. For any questions, write to <a href="mailto:{{EMAIL}}">{{EMAIL}}</a>.</p>
 
     <h2>Children</h2>
     <p>Vatio isn't aimed at children under 13 and doesn't collect data from anyone.</p>
@@ -107,5 +105,12 @@
     <p>If we change this policy, we'll update the date above and, if the change is significant, let you know inside the app.</p>
   </section>
 </main>
+
+<footer>
+  <div class="wrap">
+    <span>Vatio es una app de <a href="../">Drub Tech</a></span>
+    <nav><a href="./">Vatio</a><a href="mailto:{{EMAIL}}">Contacto</a></nav>
+  </div>
+</footer>
 </body>
 </html>

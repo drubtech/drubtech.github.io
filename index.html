@@ -1,41 +1,116 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Drub Tech</title>
-<meta name="description" content="Drub Tech: apps sencillas y útiles. Creadores de Vatio, la app que mide a qué velocidad carga tu móvil.">
+<title>Drub Tech · Apps sencillas que resuelven problemas reales</title>
+<meta name="description" content="Drub Tech es un estudio independiente que crea apps sencillas y útiles, sin anuncios y sin vender tus datos. Creadores de Vatio.">
+<meta property="og:title" content="Drub Tech">
+<meta property="og:description" content="Apps sencillas que resuelven problemas reales. Sin anuncios y sin vender tus datos.">
+<meta property="og:image" content="https://drubtech.github.io/vatio/img/og.jpg">
+<meta property="og:url" content="https://drubtech.github.io/">
+<meta name="theme-color" content="#f5f7f7">
 <link rel="icon" href="favicon.png">
-<style>
-  :root { --bg: #eef0f2; --card: #ffffff; --text: #23272c; --muted: #5b626b; --accent: #3f7389; --line: #d3d7dc; }
-  @media (prefers-color-scheme: dark) { :root { --bg: #0b1418; --card: #142227; --text: #f1f3f4; --muted: #9da3aa; --accent: #5ee2cd; --line: #243840; } }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  main { max-width: 760px; margin: 0 auto; padding: 48px 16px 64px; }
-  h1 { font-size: 34px; margin: 0 0 4px; letter-spacing: -0.5px; }
-  .muted { color: var(--muted); }
-  a { color: var(--accent); }
-  .app { display: flex; gap: 18px; align-items: center; background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 20px; margin-top: 28px; text-decoration: none; color: inherit; }
-  .app img { width: 72px; height: 72px; border-radius: 18px; flex: none; }
-  .app h2 { margin: 0; font-size: 22px; }
-  .app p { margin: 2px 0 0; }
-  footer { margin-top: 48px; font-size: 14px; }
-</style>
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="assets/estilo.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Drub Tech","url":"https://drubtech.github.io/","logo":"https://drubtech.github.io/apple-touch-icon.png"}
+</script>
 </head>
-<body>
+<body class="studio">
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><span class="mark"><i></i></span>Drub Tech</a>
+    <nav>
+      <a href="#apps">Apps</a>
+      <a href="#como">Cómo trabajamos</a>
+      <a class="btn small" href="vatio/">Conoce Vatio</a>
+    </nav>
+  </div>
+</header>
+
 <main>
-  <h1>Drub Tech</h1>
-  <p class="muted">Apps sencillas y útiles, sin anuncios y sin vender tus datos.</p>
-
-  <a class="app" href="vatio/">
-    <img src="vatio/icono.png" alt="Icono de Vatio">
-    <div>
-      <h2>Vatio</h2>
-      <p class="muted">Mira a qué velocidad carga tu móvil y descubre si falla el cable o el cargador.</p>
+  <section class="studio-hero">
+    <div class="wrap">
+      <span class="rainbow"></span>
+      <h1>Apps sencillas que resuelven problemas reales.</h1>
+      <p class="lead">Somos Drub Tech, un estudio independiente. Hacemos apps pequeñas, cuidadas y honestas: sin anuncios, sin vender tus datos y pensadas para que entiendas lo que pasa en tu móvil.</p>
+      <div class="hero cta" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:36px;padding:0">
+        <a class="btn" href="#apps">Ver nuestras apps</a>
+        <a class="btn ghost" href="#como">Cómo trabajamos</a>
+      </div>
     </div>
-  </a>
+  </section>
 
-  <footer class="muted">© 2026 Drub Tech</footer>
+  <section id="apps" style="padding-top:24px">
+    <div class="wrap">
+      <p class="kicker">Nuestras apps</p>
+      <h2 style="margin-bottom:34px">Hechas una a una.</h2>
+      <div class="apps">
+        <a class="app-card reveal" href="vatio/">
+          <div>
+            <div class="head">
+              <img src="vatio/icono.png" alt="">
+              <div><b>VATIO</b><span>Velocidad de carga · Android</span></div>
+            </div>
+            <p>Mira a qué velocidad carga tu móvil y descubre si falla el cable o el cargador.</p>
+            <div class="tags"><span>Beta abierta</span><span>Gratis</span><span>Sin anuncios</span></div>
+          </div>
+          <span class="go">Descubrir Vatio →</span>
+          <img class="shot" src="vatio/img/ahora.webp" alt="" loading="lazy">
+        </a>
+
+        <div class="app-card soon reveal">
+          <div class="q">+</div>
+          <h3>La siguiente, en camino</h3>
+          <p>Estamos trabajando en nuevas apps con la misma idea: resolver una cosa y hacerla muy bien.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="como">
+    <div class="wrap">
+      <p class="kicker">Cómo trabajamos</p>
+      <h2 style="margin-bottom:34px">Cuatro reglas que no nos saltamos.</h2>
+      <div class="principles">
+        <div class="card reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 L19.5 6 V11.5 C19.5 16 16.3 19.6 12 21 C7.7 19.6 4.5 16 4.5 11.5 V6 Z M9 12 L11.2 14.2 L15.5 9.8"/></svg></div>
+          <h3>Tus datos son tuyos</h3>
+          <p>Todo se queda en tu móvil. No pedimos cuentas ni vendemos información.</p>
+        </div>
+        <div class="card reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 A9 9 0 1 0 12 21 A9 9 0 1 0 12 3 Z M5.6 5.6 L18.4 18.4"/></svg></div>
+          <h3>Sin anuncios</h3>
+          <p>Ni banners ni vídeos que interrumpen. Una app que usas, no una que te usa.</p>
+        </div>
+        <div class="card reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 L13.8 10.2 L21 12 L13.8 13.8 L12 21 L10.2 13.8 L3 12 L10.2 10.2 Z"/></svg></div>
+          <h3>Claras, no técnicas</h3>
+          <p>Te explicamos lo que pasa con palabras normales y te decimos qué hacer.</p>
+        </div>
+        <div class="card reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12 H7 L9.5 6 L14 18 L16.5 12 H21"/></svg></div>
+          <h3>Con quien las usa</h3>
+          <p>Cada app pasa por una beta con usuarios reales antes de publicarse.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span data-year>2026</span> Drub Tech</span>
+    <nav>
+      <a href="vatio/">Vatio</a>
+      <a href="vatio/privacidad">Privacidad de Vatio</a>
+      <a href="mailto:{{EMAIL}}">Contacto</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/web.js"></script>
 </body>
 </html>
