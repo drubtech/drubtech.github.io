@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vatio · Velocidad de carga</title>
+<meta name="description" content="Vatio mide en directo los vatios que entran en tu batería, te dice si el cable o el cargador frenan la carga y te ayuda a cuidar la batería. Gratis, sin anuncios, para Android.">
+<link rel="icon" href="icono.png">
+<style>
+  :root { --bg: #eef0f2; --card: #ffffff; --text: #23272c; --muted: #5b626b; --accent: #3f7389; --line: #d3d7dc; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #0b1418; --card: #142227; --text: #f1f3f4; --muted: #9da3aa; --accent: #5ee2cd; --line: #243840; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 40px 16px 64px; }
+  header { display: flex; gap: 18px; align-items: center; }
+  header img { width: 84px; height: 84px; border-radius: 20px; flex: none; }
+  h1 { font-size: 34px; margin: 0; letter-spacing: -0.5px; }
+  .muted { color: var(--muted); }
+  a { color: var(--accent); }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 22px; margin-top: 24px; }
+  ul { padding-left: 20px; margin: 8px 0 0; }
+  li { margin: 6px 0; }
+  .badge { display: inline-block; margin-top: 20px; padding: 12px 20px; border-radius: 999px; background: var(--accent); color: var(--bg); font-weight: 700; text-decoration: none; }
+  footer { margin-top: 40px; font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="icono.png" alt="Icono de Vatio">
+    <div>
+      <h1>Vatio</h1>
+      <p class="muted" style="margin:0">Mira a qué velocidad carga tu móvil</p>
+    </div>
+  </header>
+
+  <section class="card">
+    <ul>
+      <li><strong>Vatios reales en directo</strong>, verificados con tu batería.</li>
+      <li><strong>¿Cable o cargador?</strong> Una prueba de 3 minutos te dice cuál frena la carga.</li>
+      <li><strong>¿Qué cargador necesito?</strong> Los vatios y el tipo de carga que admite tu móvil.</li>
+      <li><strong>Historial e informe mensual</strong> de tus cargas y consejos para que la batería dure.</li>
+    </ul>
+    <p class="muted">Gratis, sin anuncios y sin vender tus datos: todo se queda en tu móvil. Para Android.</p>
+    <span class="badge">Próximamente en Google Play</span>
+  </section>
+
+  <footer class="muted">
+    <a href="privacidad">Política de privacidad</a> ·
+    <a href="https://www.instagram.com/vatio_app">Instagram</a> ·
+    <a href="../">Drub Tech</a>
+  </footer>
+</main>
+</body>
+</html>
